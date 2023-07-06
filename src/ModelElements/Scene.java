@@ -16,11 +16,11 @@ public class Scene {
     }
 
 
-    public Type method1(Type type){
+    public <T> T method1(T type){
         return type;
     }
 
-    public Type method2(Type type,Type type1){
+    public <T> T method2(T type,T type1){
         return type;
     }
 }

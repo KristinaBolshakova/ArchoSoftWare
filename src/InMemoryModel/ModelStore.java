@@ -8,7 +8,7 @@ import ModelElements.Scene;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelStore implements IModelChanger{
+public class ModelStore implements IModelChanger {
     public List<PoligonalModel> models;
     public List<Scene> scenes;
     public List<Flash> flashes;
@@ -28,8 +28,11 @@ public class ModelStore implements IModelChanger{
 
     }
 
-    public Scene GetScena(int id){
-        return new Scene(id, models, flashes);
+    public Scene GetScena(int id) {
+        for (int i = 0; i < scenes.size(); i++)
+            if (scenes.get(i).id == id) {
+                return scenes.get(i);
+            }
+        return null;
     }
-
 }

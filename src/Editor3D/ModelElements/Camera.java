@@ -1,7 +1,7 @@
-package ModelElements;
+package Editor3D.ModelElements;
 
-import Stuff.Angle3D;
-import Stuff.Point3D;
+import Editor3D.Stuff.Angle3D;
+import Editor3D.Stuff.Point3D;
 
 /**
  * класс камер

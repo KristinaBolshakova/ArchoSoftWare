@@ -1,9 +1,9 @@
-package InMemoryModel;
+package Editor3D.InMemoryModel;
 
-import ModelElements.Camera;
-import ModelElements.Flash;
-import ModelElements.PoligonalModel;
-import ModelElements.Scene;
+import Editor3D.ModelElements.Camera;
+import Editor3D.ModelElements.Flash;
+import Editor3D.ModelElements.PoligonalModel;
+import Editor3D.ModelElements.Scene;
 
 import java.util.ArrayList;
 import java.util.List;

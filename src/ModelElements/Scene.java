@@ -1,6 +1,6 @@
 package ModelElements;
 
-import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Scene {
@@ -8,19 +8,29 @@ public class Scene {
     public List<PoligonalModel> models;
 
     public List<Flash> flashes;
+    public List<Camera> cameras = new ArrayList<Camera>();
 
-    public Scene(int id, List<PoligonalModel> models, List<Flash> flashes) {
+    public Scene(int id, List<PoligonalModel> models, List<Flash> flashes, List<Camera> cameras) throws Exception {
         this.id = id;
-        this.models = models;
+        if (models.size() > 0) {
+            this.models = models;
+        } else {
+            throw new Exception("Должна быть одна модель");
+        }
         this.flashes = flashes;
+        if (cameras.size() > 0)  {
+            this.cameras = cameras;
+        }else{
+            throw new Exception("Должна быть одна камера");
+        }
     }
 
 
-    public <T> T method1(T type){
-        return type;
+    public <T> T method1(T flash) {
+        return flash;
     }
 
-    public <T> T method2(T type,T type1){
-        return type;
+    public <T, E> T method2(T model, E flash) {
+        return model;
     }
 }

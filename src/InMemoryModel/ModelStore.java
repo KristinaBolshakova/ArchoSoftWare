@@ -13,20 +13,44 @@ public class ModelStore implements IModelChanger {
     public List<Scene> scenes;
     public List<Flash> flashes;
     public List<Camera> cameras;
-    private List<IModelChangedObserver> changedObservers;
+    private List<iModelChangedObserver> changedObservers;
 
-    public ModelStore(List<IModelChangedObserver> changedObservers) {
+    /**
+     *
+     * @param texture
+     * @throws Exception
+     */
+
+    public ModelStore(List<iModelChangedObserver> changedObservers) throws Exception {
         this.changedObservers = changedObservers;
-        models = new ArrayList<>();
-        scenes = new ArrayList<>();
-        flashes = new ArrayList<>();
-        cameras = new ArrayList<>();
+        this.models = new ArrayList<>();
+        this.scenes = new ArrayList<>();
+        this.flashes = new ArrayList<>();
+        this.cameras = new ArrayList<>();
+
+        models.add(new PoligonalModel(null));
+        flashes.add(new Flash());
+        cameras.add(new Camera());
+        scenes.add(new Scene(0, models, flashes, cameras));
     }
+
+    /**
+     * Регистрация изменений
+     *
+     * @param sender
+     */
 
     @Override
     public void NotifyChange(IModelChanger sender) {
 
     }
+
+    /**
+     * Возвращает scena по id
+     *
+     * @param id
+     * @return
+     */
 
     public Scene GetScena(int id) {
         for (int i = 0; i < scenes.size(); i++)
@@ -35,4 +59,6 @@ public class ModelStore implements IModelChanger {
             }
         return null;
     }
+
+
 }

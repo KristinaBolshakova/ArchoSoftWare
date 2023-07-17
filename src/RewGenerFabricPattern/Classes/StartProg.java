@@ -5,9 +5,8 @@ import RewGenerFabricPattern.Classes.Rewards.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
-public class Main {
+public class StartProg {
     public static void main(String[] args) throws Exception {
 //        ItemFabric generator = new GoldGenerator();
 //        generator.openReward();

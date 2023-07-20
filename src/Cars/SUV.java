@@ -3,9 +3,9 @@ package Cars;
 import java.awt.*;
 
 /**
- * класс, описывающий конкретный автомобиль модели Lada Vesta, наследованный от класса Car
+ * класс, описывающий конкретный автомобиль модели Toyota Land Cruiser, наследованный от класса Car
  */
-public class Vesta extends Car implements iGasStation {
+public class SUV extends Car implements iGasStation {
     private final iGasStation gasStation;
 
     /**
@@ -19,10 +19,12 @@ public class Vesta extends Car implements iGasStation {
      * @param engineCapacity - объем двигателя
      * @param gasStation     - объект интерфейса заправочной станции
      */
-    public Vesta(String brand, String model, Color color, String bodyType, int wheelsCount, String fuel, String transmission, float engineCapacity, iGasStation gasStation) {
+    public SUV(String brand, String model, Color color, String bodyType, int wheelsCount, String fuel, String transmission, float engineCapacity, iGasStation gasStation) {
         super(brand, model, color, bodyType, wheelsCount, fuel, transmission, engineCapacity);
         this.gasStation = gasStation;
     }
+
+
 
     @Override
     public void refill() {

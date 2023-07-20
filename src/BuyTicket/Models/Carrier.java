@@ -19,4 +19,12 @@ public class Carrier {
     public long getCardNumber() {
         return cardNumber;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCardNumber(long cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 }

@@ -62,4 +62,20 @@ public class User {
     public long getCardNumber() {
         return cardNumber;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setHashPassword(int hashPassword) {
+        this.hashPassword = hashPassword;
+    }
+
+    public void setCardNumber(long cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 }

@@ -14,7 +14,7 @@ import BuyTicket.Services.CashRepository;
  */
 public class CashProvider implements ICarrierRepo, ICashRepo {
     private long cardNumber;
-    private boolean isAuthorized;
+    private boolean isAuthorized = false;
     private ICarrierRepo carrierRepository;
     private ICashRepo cashRepository;
 
@@ -44,12 +44,8 @@ public class CashProvider implements ICarrierRepo, ICashRepo {
      * @param client - клиент
      */
     public void authorization(User client) {
-        try {
-            Authentication.authentication(new Customer().getUserProvider(), client.getUserName(), client.getHashPassword());
-            isAuthorized = true;
-        } catch (RuntimeException e) {
-            isAuthorized = false;
-        }
+        cardNumber = client.getCardNumber();
+        isAuthorized = true;
     }
 
     /**
@@ -62,8 +58,11 @@ public class CashProvider implements ICarrierRepo, ICashRepo {
     // подсказка  Carrier carrier = carrierRepository.read(1);
     // подсказка  return cashRepository.transaction(ticket.getPrice(), cardNumber, carrier.getCardNumber());
     public boolean buy(Ticket ticket) throws RuntimeException {
-        Carrier carrier = carrierRepository.read(1);
-        return cashRepository.transaction(ticket.getPrice(), cardNumber, carrier.getCardNumber());
+        if (isAuthorized){
+            Carrier carrier = carrierRepository.read(1);
+            return cashRepository.transaction(ticket.getPrice(), cardNumber, carrier.getCardNumber());
+        }
+        return false;
     }
 
 

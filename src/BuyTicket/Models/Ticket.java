@@ -89,7 +89,23 @@ public class Ticket{
         return isValid;
     }
 
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setRouteNumber(int routeNumber) {
+        this.routeNumber = routeNumber;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void setValid(boolean valid) {
-        isValid = true;
+        isValid = valid;
     }
 }

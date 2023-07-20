@@ -5,7 +5,7 @@ package BuyTicket.Models;
  */
 public class BankAccount {
     private long card;
-    private long oldCard;
+    private static long oldCard;
     private int balance;
 
 

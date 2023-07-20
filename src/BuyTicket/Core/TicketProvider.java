@@ -47,7 +47,8 @@ public class TicketProvider implements ITicketRepo {
      * @return результат выполнения операции
      */
     public boolean updateTicketStatus(Ticket ticket) {
-        return ticket.getValid();
+        ticket.setValid(false);
+        return ticketRepo.update(ticket);
     }
     /**
      * Метод получения билетов из базы данных
